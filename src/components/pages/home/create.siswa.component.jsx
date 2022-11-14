@@ -30,9 +30,11 @@ const CreateUser = () => {
 				kelas: kelas,
 			})
 			.then((res) => {
-				alert("succes");
+				alert("Insert Success !");
 				console.log(res);
 				setNama("");
+				setJurusan("");
+				setKelas("");
 			})
 			.catch((error) => {
 				console.log(error);

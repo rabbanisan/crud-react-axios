@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Container from "../../container.component";
+import DataTable from "../../data.table.comonent.jsx";
 
 const SiswaList = () => {
 	const [siswa, setSiswa] = useState([]);
-	const [id, setId] = useState(1);
+	// const [id, setId] = useState(0);
 
 	useEffect(() => {
 		axios
@@ -17,22 +17,7 @@ const SiswaList = () => {
 			.catch((error) => {
 				console.log(error);
 			});
-	}, [id]);
-
-	// useEffect(() => {
-	// 	// axios
-	// 	// 	.get(`http://localhost:5000/delete-siswa/${id}`)
-	// 	// 	.then((res) => {
-	// 	// 		setSiswa(res.data);
-	// 	// 		console.log(res.data);
-	// 	// 	})
-	// 	// 	.catch((error) => {
-	// 	// 		console.log(error);
-	// 	// 	});
-	// 	console.log(id);
-	// }, [id]);
-
-	// const navigate = useNavigate();
+	}, []);
 
 	return (
 		<>
@@ -75,37 +60,14 @@ const SiswaList = () => {
 							<tbody>
 								{siswa.map((data, i) => {
 									return (
-										<tr className="bg-white border-b bg-blue-100" key={i}>
-											<td className="py-4 px-6">{i + 1}</td>
-											<td className="py-4 px-6">{data.nama}</td>
-											<td className="py-4 px-6">{data.jurusan}</td>
-											<td className="py-4 px-6">{data.kelas}</td>
-											<td className="py-4 px-6 w-2/12">
-												<div className="action flex justify-around">
-													<button className="edit">
-														<img
-															src="https://res.cloudinary.com/dna8vdn4v/image/upload/v1668049293/React-project/edit2_ctl6tu.svg"
-															alt=""
-														/>
-													</button>
-
-													<button
-														className="delete"
-														onClick={setId(data._id)}
-														// onClick={() => {
-														// 	navigate("siswaDelete", {
-														// 		state: { id: data._id },
-														// 	});
-														// }}
-													>
-														<img
-															src="https://res.cloudinary.com/dna8vdn4v/image/upload/v1668049332/React-project/delete_h9k8fx.svg"
-															alt=""
-														/>
-													</button>
-												</div>
-											</td>
-										</tr>
+										<DataTable
+											key={i}
+											num={i + 1}
+											idSiswa={data._id}
+											namaSiswa={data.nama}
+											jurusanSiswa={data.jurusan}
+											kelasSiswa={data.kelas}
+										/>
 									);
 								})}
 							</tbody>
