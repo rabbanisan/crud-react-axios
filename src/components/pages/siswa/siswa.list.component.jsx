@@ -5,7 +5,9 @@ import DataTable from "../../data.table.comonent.jsx";
 
 const SiswaList = () => {
 	const [siswa, setSiswa] = useState([]);
-	// const [id, setId] = useState(0);
+	const [reload, setReload] = useState(1);
+
+	const success = 0;
 
 	useEffect(() => {
 		axios
@@ -17,7 +19,11 @@ const SiswaList = () => {
 			.catch((error) => {
 				console.log(error);
 			});
-	}, []);
+	}, [reload]);
+
+	const setDeleted = (num) => {
+		setReload(num);
+	};
 
 	return (
 		<>
@@ -67,6 +73,7 @@ const SiswaList = () => {
 											namaSiswa={data.nama}
 											jurusanSiswa={data.jurusan}
 											kelasSiswa={data.kelas}
+											setDeleted={setDeleted}
 										/>
 									);
 								})}

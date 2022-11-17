@@ -1,9 +1,11 @@
 // import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const DataTable = (props) => {
-	const { num, idSiswa, namaSiswa, jurusanSiswa, kelasSiswa } = props;
-
+	const { num, idSiswa, namaSiswa, jurusanSiswa, kelasSiswa, setDeleted } =
+		props;
+	console.log(idSiswa);
 	return (
 		<tr className="bg-white border-b bg-blue-100">
 			<td className="py-4 px-6">{num}</td>
@@ -12,23 +14,33 @@ const DataTable = (props) => {
 			<td className="py-4 px-6">{kelasSiswa}</td>
 			<td className="py-4 px-6 w-2/12">
 				<div className="action flex justify-around">
-					<Link className="edit">
+					<Link className="edit" to="siswaEdit" state={{ id: `${idSiswa}` }}>
 						<img
 							src="https://res.cloudinary.com/dna8vdn4v/image/upload/v1668049293/React-project/edit2_ctl6tu.svg"
 							alt=""
 						/>
 					</Link>
 
-					<Link
+					<button
 						className="delete"
-						to="siswaDelete"
-						state={{ id: `${idSiswa}` }}
+						onClick={() => {
+							axios
+								.get(`http://localhost:5000/delete-siswa/${idSiswa}`)
+								.then(() => {
+									setDeleted(num);
+								})
+								.catch((error) => {
+									console.log(error);
+								});
+						}}
+						// to="siswaDelete"
+						// state={{ id: `${idSiswa}` }}
 					>
 						<img
 							src="https://res.cloudinary.com/dna8vdn4v/image/upload/v1668049332/React-project/delete_h9k8fx.svg"
 							alt=""
 						/>
-					</Link>
+					</button>
 				</div>
 			</td>
 		</tr>

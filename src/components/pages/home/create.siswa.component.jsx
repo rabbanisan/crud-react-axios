@@ -21,7 +21,6 @@ const CreateUser = () => {
 	};
 
 	const submitSiswa = (e) => {
-		console.log("hello");
 		e.preventDefault();
 		axios
 			.post("http://localhost:5000/insert-siswa", {
