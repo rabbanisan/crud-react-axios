@@ -31,7 +31,7 @@ const SiswaList = () => {
 				<Container className="flex justify-center items-center">
 					<div className="jumboText w-6/12 ">
 						<h1 className="font-semibold text-3xl mb-5 sm:text-[36px] lg:text-[48px] xl:text-[64px]">
-							Hello world!
+							Daftar Siswa
 						</h1>
 						<p className="sm:text-[14px] lg:text-[18px] xl:text-[24px]">
 							This is a simple hero unit, a simple jumbotron-style component for

@@ -52,7 +52,7 @@ const CreateUser = () => {
 					</div>
 					<div className="jumboText w-8/12 md:w-6/12 ">
 						<h1 className="font-semibold text-[24px] sm:text-[32px]  md:text-[46px] lg:text-[52px] xl:text-[64px]">
-							Hello world!
+							Hallo admin
 						</h1>
 						<p className="14px text-[12px] sm:text-[14px] md:text-[20px] xl:text-[28px]">
 							This is a simple hero unit, a simple jumbotron-style component for
