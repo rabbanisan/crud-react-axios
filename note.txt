@@ -1,0 +1,23 @@
+##React## 
+-Liblary JS untuk membangun FrontEnd (UI)
+-Dibuat oleh FaceBook
+A. Function Component
+  Reusable independent block of code, return element HTML
+  -Props
+  Seperti argument pada Function, digunakan untuk parsing data antar komponen.
+B. Hook (kait)
+  -useState
+  Untuk menyimpan data pada state
+  -useEffect
+  Untuk menjalankan side effect (fetching, update data DOM, timer), punya 2 argument (Function, Dependency), ketika dibuat tanpa Dependency dia akan menjalankan Function unlimited rendering, sebaliknya menjalankan Function ketika awal render & saat ada perubahan pada Dependencynya.
+C. Axios
+  Liblary untuk fetching API
+  -get
+  Ambil data dari API
+  -post
+  Kirim data ke API
+D. React-Router-DOM
+  Liblary untuk routing 
+  - route -> path
+  - Link
+  - Outlet

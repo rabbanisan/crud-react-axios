@@ -7,8 +7,6 @@ const SiswaList = () => {
 	const [siswa, setSiswa] = useState([]);
 	const [reload, setReload] = useState(1);
 
-	const success = 0;
-
 	useEffect(() => {
 		axios
 			.get("http://localhost:5000/")
