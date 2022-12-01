@@ -7,9 +7,11 @@ const SiswaList = () => {
 	const [siswa, setSiswa] = useState([]);
 	const [reload, setReload] = useState(1);
 
+	const success = 0;
+
 	useEffect(() => {
 		axios
-			.get("http://localhost:5000/")
+			.get("https://crud-express-mongoatlas.rabbanisan.repl.co/")
 			.then((res) => {
 				setSiswa(res.data);
 				console.log(res.data);
@@ -32,8 +34,7 @@ const SiswaList = () => {
 							Daftar Siswa
 						</h1>
 						<p className="sm:text-[14px] lg:text-[18px] xl:text-[24px]">
-							This is a simple hero unit, a simple jumbotron-style component for
-							calling extra attention to featured content or information.
+							Pada halaman ini kamu bisa meliahat semua siswa pada daftar, kamu juga bisa menghapus dan merubah data siswa tiap baris.
 						</p>
 					</div>
 				</Container>

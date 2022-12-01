@@ -25,7 +25,7 @@ const DataTable = (props) => {
 						className="delete"
 						onClick={() => {
 							axios
-								.get(`http://localhost:5000/delete-siswa/${idSiswa}`)
+								.get(`https://crud-express-mongoatlas.rabbanisan.repl.co/delete-siswa/${idSiswa}`)
 								.then(() => {
 									setDeleted(num);
 								})

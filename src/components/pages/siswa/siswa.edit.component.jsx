@@ -15,7 +15,7 @@ const SiswaEdit = () => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/update-siswa/${idSiswa}`)
+			.get(`https://crud-express-mongoatlas.rabbanisan.repl.co/update-siswa/${idSiswa}`)
 			.then((res) => {
 				setNama(res.data.nama);
 				setJurusan(res.data.jurusan);
@@ -42,7 +42,7 @@ const SiswaEdit = () => {
 	const submitSiswa = (e) => {
 		e.preventDefault();
 		axios
-			.post(`http://localhost:5000/update-siswa/${idSiswa}`, {
+			.post(`https://crud-express-mongoatlas.rabbanisan.repl.co/update-siswa/${idSiswa}`, {
 				nama: nama,
 				jurusan: jurusan,
 				kelas: kelas,

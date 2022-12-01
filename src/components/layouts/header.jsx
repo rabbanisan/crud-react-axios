@@ -17,7 +17,7 @@ const Navbar = () => {
 							<img
 								src="https://res.cloudinary.com/dna8vdn4v/image/upload/v1667964418/React-project/book-logo_iswslx.png"
 								className="mr-3 h-6 sm:h-10"
-								alt="SIS Logo"
+								alt="Flowbite Logo"
 							/>
 							<span className="hidden sm:block self-center text-xl font-semibold whitespace-nowrap">
 								Sistem Informasi Siswa
